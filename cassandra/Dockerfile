@@ -4,7 +4,7 @@
 #
 # Starts a Cassandra instance constituting a one node cluster. 
 
-FROM peerbelt/cassandra:base-2.2.1
+FROM peerbelt/cassandra:base-3.0.0~beta2
 
 USER root
 

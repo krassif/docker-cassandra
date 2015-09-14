@@ -20,11 +20,11 @@ RUN echo "deb http://debian.datastax.com/community stable main" > /etc/apt/sourc
 RUN ln -s -f /bin/true /usr/bin/chfn
 
 
-# Install Cassandra 2.2.1
+# Install Cassandra 3.0.0~beta2
 RUN apt-get update && \
 	apt-get -y --force-yes install python-pip && \
 	apt-get update && \
-    apt-get install -y --force-yes cassandra=2.2.1 dsc22=2.2.1-1 && \
+    apt-get install -y --force-yes cassandra=3.0.0~beta2 && \
     rm -rf /var/lib/apt/lists/*
 
 ENV CASSANDRA_CONFIG /etc/cassandra
