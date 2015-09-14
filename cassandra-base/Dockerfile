@@ -21,7 +21,7 @@ RUN ln -s -f /bin/true /usr/bin/chfn
 
 # Install Cassandra 2.0.10
 RUN apt-get update && \
-    apt-get install -y --force-yes cassandra=2.1.2 dsc21=2.1.2-1 && \
+    apt-get install -y --force-yes cassandra=2.2.1 dsc22=2.2.1-1 && \
     rm -rf /var/lib/apt/lists/*
 
 ENV CASSANDRA_CONFIG /etc/cassandra
