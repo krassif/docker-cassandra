@@ -19,8 +19,11 @@ RUN echo "deb http://debian.datastax.com/community stable main" > /etc/apt/sourc
 # Workaround for https://github.com/docker/docker/issues/6345
 RUN ln -s -f /bin/true /usr/bin/chfn
 
-# Install Cassandra 2.0.10
+
+# Install Cassandra 2.2.1
 RUN apt-get update && \
+	apt-get -y --force-yes install python-pip && \
+	apt-get update && \
     apt-get install -y --force-yes cassandra=2.2.1 dsc22=2.2.1-1 && \
     rm -rf /var/lib/apt/lists/*
 
@@ -35,10 +38,6 @@ RUN /usr/local/bin/config-cassandra-base
 RUN rm -f /etc/security/limits.d/cassandra.conf
 
 EXPOSE 7199 7000 7001 9160 9042 22 8012 61621
-
-RUN apt-get update
-RUN apt-get -y --force-yes install python-pip
-RUN pip install cqlsh
 
 RUN apt-get update
 
