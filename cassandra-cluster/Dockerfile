@@ -6,7 +6,7 @@
 # If CASSANDRA_SEEDS is not set, node acts as its own seed
 # If CASSANDRA_TOKEN is not set, startup process is aborted
 
-FROM peerbelt/cassandra:base-2.2.1
+FROM peerbelt/cassandra:base-3.0.9
 
 USER root
 
